@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import TextReveal from "./ui/TextReveal";
 
 type FAQItem = {
   question: string;
@@ -32,9 +33,11 @@ const FAQ = () => {
 
   return (
     <div className="mb-[100px]">
-      <div className="text-center section-title mb-[20px]">
-        Frequently Asked Questions
-      </div>
+      <TextReveal>
+        <div className="text-center section-title mb-[20px]">
+          Frequently Asked Questions
+        </div>
+      </TextReveal>
       <div className="w-full md:max-w-[80%] mx-auto">
         {items.map((item, index) => (
           <div
@@ -49,11 +52,10 @@ const FAQ = () => {
               </span>
             </h3>
             <div
-              className={`mt-2 text-gray-300 transition-all duration-300 ease-in-out ${
-                openIndex === index
+              className={`mt-2 text-gray-300 transition-all duration-300 ease-in-out ${openIndex === index
                   ? "max-h-40 opacity-100"
                   : "max-h-0 opacity-0 overflow-hidden"
-              }`}
+                }`}
             >
               <p className="content-text text-gray-400">{item.answer}</p>
             </div>

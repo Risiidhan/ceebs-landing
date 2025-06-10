@@ -1,4 +1,6 @@
 import React from "react";
+import TextReveal from "./ui/TextReveal";
+import TextParaAnimation from "./ui/TextParaAnimation";
 
 type featureType = {
   icon: string;
@@ -9,9 +11,11 @@ type featureType = {
 const FeatureDiv: React.FC<featureType> = ({ icon, title, description }) => {
   return (
     <div className="flex flex-col items-start gap-3 glass-effect h-full rounded-[15px] p-[20px]">
-      <div>{icon}</div>
-      <div className="content-text !font-bold">{title}</div>
-      <div className="content-text">{description}</div>
+      <TextParaAnimation>
+        <div>{icon}</div>
+        <div className="content-text !font-bold">{title}</div>
+        <div className="content-text">{description}</div>
+      </TextParaAnimation>
     </div>
   );
 };
@@ -47,10 +51,12 @@ const featuresArr: featureType[] = [
 const FeatureComponent = () => {
   return (
     <div className="flex flex-col items-center gap-[30px] mb-[100px]">
-      <div className="text-center section-title">Core Features</div>
+      <TextReveal>
+        <div className="text-center section-title">Core Features</div>
+      </TextReveal>
       <div className="context-text grid grid-cols-2 md:grid-cols-3 gap-4">
         {featuresArr.map((feature: featureType, index: number) => (
-          <div key={index} className={`${index == featuresArr.length-1 ? "col-span-2": ""}`}>
+          <div key={index} className={`${index == featuresArr.length - 1 ? "col-span-2" : ""}`}>
             <FeatureDiv key={index} {...feature} />
           </div>
         ))}
