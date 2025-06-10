@@ -2,11 +2,12 @@ import React from "react";
 
 const ButtonComponent = () => {
   return (
-    <button className="bg-black min-w-[200px] cursor-pointer shadow-2xl shadow-zinc-900 rounded-[25px] py-1 text-white">
-      <div className="relative flex-center content-text z-10 rounded-full bg-black py-0.5 px-4  ">
+    <button className="bg-white w-full sm:w-auto min-w-[200px] cursor-pointer shadow-md shadow-zinc-300 rounded-[25px] py-1 text-black transition hover:shadow-lg">
+      <div className="relative flex-center content-text z-10 rounded-full bg-white py-0.5 px-4">
         <div className="content-text">Join Beta</div>
       </div>
     </button>
+
   );
 };
 

@@ -9,7 +9,7 @@ const featuresArr: string[] = [
 
 const WhyCeebsComponent = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center gap-3 mb-[100px]">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-[30px] md:gap-3 mb-[100px]">
       <div className="text-left lg:w-[40%] section-title">Why Join the Beta?</div>
       <div className="context-text grid grid-cols-2 sm:grid-cols-2 gap-3">
         {featuresArr.map((feature: string, index: number) => (

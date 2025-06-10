@@ -42,20 +42,20 @@ const FAQ = () => {
             className="border-b border-gray-200 py-4 cursor-pointer"
             onClick={() => toggle(index)}
           >
-            <h3 className="text-lg font-medium text-gray-900 flex justify-between items-center">
+            <h3 className="content-text font-medium text-white flex justify-between items-center">
               {item.question}
-              <span className="ml-2 text-gray-500">
+              <span className="ml-2 text-white">
                 {openIndex === index ? "−" : "+"}
               </span>
             </h3>
             <div
-              className={`mt-2 text-gray-600 transition-all duration-300 ease-in-out ${
+              className={`mt-2 text-gray-300 transition-all duration-300 ease-in-out ${
                 openIndex === index
                   ? "max-h-40 opacity-100"
                   : "max-h-0 opacity-0 overflow-hidden"
               }`}
             >
-              <p>{item.answer}</p>
+              <p className="content-text text-gray-400">{item.answer}</p>
             </div>
           </div>
         ))}
