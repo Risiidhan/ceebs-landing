@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.content-section {
+  max-width: 1240px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.content-text {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.glass-effect {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(74px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@media only screen and (max-width: 600px) {
+  .content-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
