@@ -19,8 +19,16 @@ const FormComponent = () => {
     }));
   };
 
-  const submitForm = () => {
-    console.log(formData);
+  const submitForm = async () => {
+    await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: formData?.name,
+        age: formData?.age,
+        email: formData?.email,
+      }),
+    });
   };
 
   return (
