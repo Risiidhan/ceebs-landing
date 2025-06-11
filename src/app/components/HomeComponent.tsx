@@ -4,18 +4,20 @@ import AboutCeebsComponent from "./AboutCeebsComponent";
 import FeatureComponent from "./FeatureComponent";
 import WhyCeebsComponent from "./WhyCeebsComponent";
 import FAQ from "./FAQ";
+import FooterComponent from "./FooterComponent";
 
 const HomeComponent = () => {
   return (
-    <div className="content-section px-[20px]">
-      <section className="h-[80dvh] py-[20px]">
+    <>
+      <section className="hero-section h-dvh !mb-[100px] overflow-hidden">
         <HeroComponent />
       </section>
       <AboutCeebsComponent />
       <FeatureComponent />
       <WhyCeebsComponent />
       <FAQ />
-    </div>
+      <FooterComponent />
+    </>
   );
 };
 

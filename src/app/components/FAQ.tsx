@@ -32,7 +32,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="mb-[100px]">
+    <div className="content-section px-[20px] !mb-[100px]">
       <TextReveal>
         <div className="text-center section-title mb-[20px]">
           Frequently Asked Questions
