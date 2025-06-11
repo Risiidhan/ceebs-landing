@@ -27,7 +27,7 @@ const WhyCeebsComponent = () => {
               className="flex flex-col bg-black border border-[#404040bd] p-4 rounded-[15px]"
             >
               <TextParaAnimation>
-                <div className="outlined-text text-[60px] font-[600]">
+                <div className="text-white text-[60px] font-[600]">
                   {index + 1}.
                 </div>
                 <div className="content-text">{feature}</div>

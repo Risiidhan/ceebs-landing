@@ -152,6 +152,17 @@ body {
   }
 }
 
+/* Hide number input arrows */
+.remove-number-spin::-webkit-inner-spin-button,
+.remove-number-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.remove-number-spin {
+  -moz-appearance: textfield; /* Firefox */
+}
+
 @media only screen and (max-width: 600px) {
   .content-text {
     font-size: 16px;

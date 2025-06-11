@@ -10,7 +10,7 @@ const HeroComponent = () => {
     <div className="content-section px-[20px] flex-center flex-col gap-[20px] w-full h-full relative">
       <Logo />
       <div className="animated-border min-h-[35px] flex-center">
-        <span className="content-text ">welcome to ceebs</span>
+        <span className="content-text lg:!text-[25px]">welcome to ceebs</span>
       </div>
       <TextReveal>
         <div className="gradient-text text-[40px] lg:text-[60px] font-[700] leading-[50px] lg:leading-[70px]">
@@ -34,7 +34,7 @@ const HeroComponent = () => {
       </div>
       <TextReveal>
         <div className="hidden sm:block w-[400px] -mb-[100%] h-auto aspect-[2/4] relative">
-          <ImageComponent src={"/assets/ceebs-potrait.png"} />
+          <ImageComponent src={"/assets/ceebs-landing.png"} />
         </div>
       </TextReveal>
     </div>
