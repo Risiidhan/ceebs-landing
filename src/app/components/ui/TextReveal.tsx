@@ -10,7 +10,7 @@ const TextReveal = ({ children }: { children: React.ReactNode }) => {
             initial={{ opacity: 0, y: 50 }} // Start from below
             whileInView={{ opacity: 1, y: 0 }} // Animate when in view
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.7 }} // Ensures it triggers when 70% visible
+            viewport={{ once: false }} // Ensures it triggers when 70% visible
             className=''>
             {children}
         </motion.div>

@@ -68,7 +68,7 @@ body {
 
 .animated-border {
   position: relative;
-  display: inline-block;
+  display: flex;
   padding: 3px 20px;
   border-radius: 25px;
   overflow: hidden;
@@ -101,7 +101,7 @@ body {
 
 .outlined-text {
   color: transparent;
-  -webkit-text-stroke: 0.3px white;
+  -webkit-text-stroke: 0.5px white;
 }
 
 .gradient-outlined-text {

@@ -4,7 +4,6 @@ import AboutCeebsComponent from "./AboutCeebsComponent";
 import FeatureComponent from "./FeatureComponent";
 import WhyCeebsComponent from "./WhyCeebsComponent";
 import FAQ from "./FAQ";
-import FooterComponent from "./FooterComponent";
 
 const HomeComponent = () => {
   return (
@@ -16,7 +15,6 @@ const HomeComponent = () => {
       <FeatureComponent />
       <WhyCeebsComponent />
       <FAQ />
-      <FooterComponent />
     </>
   );
 };
