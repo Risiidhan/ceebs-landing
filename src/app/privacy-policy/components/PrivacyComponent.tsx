@@ -2,7 +2,7 @@ import React from 'react'
 
 const PrivacyComponent = () => {
   return (
-    <body className="p-4 md:p-8 lg:p-12">
+    <div className="body p-4 md:p-8 lg:p-12">
     <div className="max-w-4xl mx-auto bg-[#181818] shadow-lg rounded-lg p-6 md:p-8 lg:p-10">
         <h1 className="text-3xl-responsive md:text-4xl font-bold text-center mb-4">CEEBS Privacy Policy</h1>
         <p className="text-white text-center mb-8 text-sm md:text-base">Last updated: June 10, 2025</p>
@@ -262,7 +262,7 @@ const PrivacyComponent = () => {
             </p>
         </section>
     </div>
-</body>
+</div>
   )
 }
 

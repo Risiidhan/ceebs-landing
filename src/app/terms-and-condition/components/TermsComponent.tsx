@@ -3,7 +3,7 @@ import "../style.css"
 
 const TermsComponent = () => {
   return (
-    <body className="p-4 md:p-8 lg:p-12">
+    <div className="body p-4 md:p-8 lg:p-12">
       <div className="max-w-4xl mx-auto bg-[#181818] shadow-lg rounded-lg p-6 md:p-8 lg:p-10">
         <h1 className="text-3xl-responsive md:text-4xl font-bold text-center mb-4">
           CEEBS Terms and Conditions
@@ -1488,7 +1488,7 @@ const TermsComponent = () => {
           </p>
         </section>
       </div>
-    </body>
+    </div>
   );
 };
 
