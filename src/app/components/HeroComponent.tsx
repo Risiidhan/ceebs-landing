@@ -1,5 +1,5 @@
 import React from "react";
-import FormComponent from "./forms/FormComponent";
+// import FormComponent from "./forms/FormComponent";
 import TextReveal from "./ui/TextReveal";
 import TextParaAnimation from "./ui/TextParaAnimation";
 import ImageComponent from "./ui/ImageComponent";
@@ -9,9 +9,9 @@ const HeroComponent = () => {
   return (
     <div className="content-section px-[20px] flex-center flex-col gap-[20px] w-full h-full relative">
       <Logo />
-      <div className="animated-border min-h-[35px] flex-center">
+      {/* <div className="animated-border min-h-[35px] flex-center">
         <span className="content-text lg:!text-[25px]">welcome to ceebs</span>
-      </div>
+      </div> */}
       <TextReveal>
         <div className="gradient-text text-[40px] lg:text-[60px] font-[700] leading-[50px] lg:leading-[70px]">
           No Names. No Pressure. <br className="hidden md:inline" />
@@ -23,8 +23,8 @@ const HeroComponent = () => {
           A raw, anonymous social experience like no other. Built for the brave.
         </div>
       </TextParaAnimation>
-      <FormComponent />
-      <div className="hidden sm:block absolute bottom-0 translate-y-[15%] w-screen">
+      {/* <FormComponent /> */}
+      <div className="block absolute bottom-0  w-screen z-10">
         <h1
           style={{ fontSize: "clamp(50px, 30vw, 500px)" }}
           className="font-bold gradient-outlined-text leading-none"
@@ -33,7 +33,7 @@ const HeroComponent = () => {
         </h1>
       </div>
       <TextReveal>
-        <div className="hidden sm:block w-[400px] -mb-[100%] h-auto aspect-[2/4] relative">
+        <div className="w-[150px] md:w-[250px]  h-auto aspect-[2/4] relative">
           <ImageComponent src={"/assets/ceebs-landing.png"} />
         </div>
       </TextReveal>

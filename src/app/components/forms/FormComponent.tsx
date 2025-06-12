@@ -3,12 +3,21 @@
 import React, { useState } from "react";
 import InputComponent from "./InputComponent";
 import ButtonComponent from "./ButtonComponent";
+import ModalComponent from "../ui/ModalComponent";
 
 const FormComponent = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    age: "",
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({ email: "" });
+  const [isLoading, setisLoading] = useState<boolean>(false);
+
+  const [modalContent, setModalContent] = useState<{
+    title: string;
+    message: string;
+    type: "success" | "error" | "warning";
+  }>({
+    title: "",
+    message: "",
+    type: "success",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -19,28 +28,74 @@ const FormComponent = () => {
     }));
   };
 
+  const isValidEmail = (email: string): boolean => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const submitForm = async () => {
-    await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: formData?.name,
-        age: formData?.age,
-        email: formData?.email,
-      }),
-    });
+    try {
+      if (formData?.email === "") {
+        setIsModalOpen(true);
+        setModalContent({
+          title: "Missing Information",
+          message:
+            "Please fill the required fields before submitting the form.",
+          type: "warning",
+        });
+        return;
+      }
+
+      if (!isValidEmail(formData.email)) {
+        setIsModalOpen(true);
+        setModalContent({
+          title: "Invalid Email",
+          message: "Please enter a valid email address.",
+          type: "warning",
+        });
+        return;
+      }
+      setisLoading(true);
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: formData?.email }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsModalOpen(true);
+        setModalContent({
+          title: "Request Submitted Successfully",
+          message:
+            "Your request to join the beta program has been received. We'll contact you soon.",
+          type: "success",
+        });
+      } else {
+        console.error("Error in response:", data.error);
+        setIsModalOpen(true);
+        setModalContent({
+          title: "Request Failed",
+          message: data.error,
+          type: "error",
+        });
+      }
+      setisLoading(false);
+    } catch (error) {
+      console.error("Network error:", error);
+      setIsModalOpen(true);
+      setModalContent({
+        title: "Network Error",
+        message:
+          "Could not connect to the server. Please check your internet connection and try again.",
+        type: "error",
+      });
+    }
   };
 
   return (
-    <div className="w-full flex-center flex-col md:flex-row gap-3">
-      <form action="" className="w-full grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <InputComponent
-          name={"name"}
-          type={"text"}
-          placeholder={"Enter Name"}
-          value={formData.name}
-          onChange={handleChange}
-        />
+    <div className="w-full flex flex-col md:flex-row flex-center gap-3">
+      <form action="" className="w-full grid grid-cols-1 gap-4">
         <InputComponent
           name={"email"}
           type={"email"}
@@ -48,16 +103,17 @@ const FormComponent = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        <InputComponent
-          name={"age"}
-          type={"number"}
-          placeholder={"Enter Age"}
-          className="remove-number-spin"
-          value={formData.age}
-          onChange={handleChange}
-        />
       </form>
-      <ButtonComponent onClick={submitForm} />
+      <ButtonComponent isLoading={isLoading} onClick={submitForm} />
+
+      <ModalComponent
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={modalContent.title}
+        type={modalContent.type}
+      >
+        <p>{modalContent.message}</p>
+      </ModalComponent>
     </div>
   );
 };

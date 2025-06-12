@@ -18,7 +18,7 @@ const InputComponent: React.FC<InputComponentProps> = ({
   onChange,
 }) => {
   return (
-    <div className="w-full flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-black">
+    <div className="w-full flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-black !focus-visible:ring-0">
       <input
         type={type}
         name={name}

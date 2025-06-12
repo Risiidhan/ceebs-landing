@@ -4,6 +4,7 @@ import AboutCeebsComponent from "./AboutCeebsComponent";
 import FeatureComponent from "./FeatureComponent";
 import WhyCeebsComponent from "./WhyCeebsComponent";
 import FAQ from "./FAQ";
+import JoinNowComponent from "./JoinNowComponent";
 
 const HomeComponent = () => {
   return (
@@ -14,6 +15,7 @@ const HomeComponent = () => {
       <AboutCeebsComponent />
       <FeatureComponent />
       <WhyCeebsComponent />
+      <JoinNowComponent />
       <FAQ />
     </>
   );
