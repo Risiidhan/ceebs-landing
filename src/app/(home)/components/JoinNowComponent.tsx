@@ -1,5 +1,6 @@
+import FormComponent from "@/components/forms/FormComponent";
 import React from "react";
-import FormComponent from "./forms/FormComponent";
+
 
 const JoinNowComponent = () => {
   return (

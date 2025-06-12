@@ -3,9 +3,7 @@ import HomeComponent from './components/HomeComponent'
 
 const page = () => {
   return (
-    <div>
-      <HomeComponent />
-    </div>
+    <div><HomeComponent /></div>
   )
 }
 

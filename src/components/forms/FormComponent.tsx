@@ -55,7 +55,7 @@ const FormComponent = () => {
         return;
       }
       setisLoading(true);
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("/api/register-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: formData?.email }),

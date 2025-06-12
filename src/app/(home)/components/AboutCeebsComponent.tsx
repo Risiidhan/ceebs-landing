@@ -1,7 +1,7 @@
+import CeebsFeatures from "@/components/svg/CeebsFeatures";
+import TextParaAnimation from "@/components/ui/TextParaAnimation";
+import TextReveal from "@/components/ui/TextReveal";
 import React from "react";
-import TextReveal from "./ui/TextReveal";
-import TextParaAnimation from "./ui/TextParaAnimation";
-import CeebsFeatures from "./svg/CeebsFeatures";
 
 const AboutCeebsComponent = () => {
   return (

@@ -1,11 +1,24 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 // import FormComponent from "./forms/FormComponent";
-import TextReveal from "./ui/TextReveal";
-import TextParaAnimation from "./ui/TextParaAnimation";
-import ImageComponent from "./ui/ImageComponent";
-import Logo from "./svg/Logo";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Logo from "@/components/svg/Logo";
+import TextReveal from "@/components/ui/TextReveal";
+import TextParaAnimation from "@/components/ui/TextParaAnimation";
+import ImageComponent from "@/components/ui/ImageComponent";
 
 const HeroComponent = () => {
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Parallax transforms
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -800]);
+
   return (
     <div className="content-section px-[20px] flex-center flex-col gap-[20px] w-full h-full relative">
       <Logo />
@@ -33,9 +46,12 @@ const HeroComponent = () => {
         </h1>
       </div>
       <TextReveal>
-        <div className="w-[150px] md:w-[250px]  h-auto aspect-[2/4] relative">
-          <ImageComponent src={"/assets/ceebs-landing.png"} />
-        </div>
+        <motion.div
+          style={{ y: imageY }}
+          className="w-[150px] md:w-[250px] aspect-[2/4] relative"
+        >
+          <ImageComponent src="/assets/ceebs-landing.png" />
+        </motion.div>
       </TextReveal>
     </div>
   );

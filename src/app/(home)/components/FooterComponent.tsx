@@ -12,7 +12,7 @@ const FooterComponent = () => {
             Privacy Policy
           </div>
           <div className="hover:text-white transition">
-            Contact
+            info@ceebs.com
           </div>
         </div>
         <p>&copy; 2025 CEEBS. All rights reserved.</p>

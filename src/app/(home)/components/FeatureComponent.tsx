@@ -1,11 +1,11 @@
+import Broadcast from "@/components/svg/Broadcast";
+import Connect from "@/components/svg/Connect";
+import Moments from "@/components/svg/Moments";
+import Wall from "@/components/svg/Wall";
+import Whisper from "@/components/svg/Whisper";
+import TextParaAnimation from "@/components/ui/TextParaAnimation";
+import TextReveal from "@/components/ui/TextReveal";
 import React, { ReactNode } from "react";
-import TextReveal from "./ui/TextReveal";
-import TextParaAnimation from "./ui/TextParaAnimation";
-import Moments from "./svg/Moments";
-import Whisper from "./svg/Whisper";
-import Broadcast from "./svg/Broadcast";
-import Connect from "./svg/Connect";
-import Wall from "./svg/Wall";
 
 type featureType = {
   icon: ReactNode;

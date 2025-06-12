@@ -1,7 +1,7 @@
 "use client";
 
+import TextReveal from "@/components/ui/TextReveal";
 import { useState } from "react";
-import TextReveal from "./ui/TextReveal";
 
 type FAQItem = {
   question: string;
@@ -38,14 +38,14 @@ const FAQ = () => {
           Frequently Asked Questions
         </div>
       </TextReveal>
-      <div className="w-full md:max-w-[80%] mx-auto">
+      <div className="w-full flex flex-col gap-1 md:max-w-[80%] mx-auto">
         {items.map((item, index) => (
           <div
             key={index}
-            className="border-b border-gray-200 py-4 cursor-pointer"
+            className="glass-effect p-4 cursor-pointer rounded-[15px]"
             onClick={() => toggle(index)}
           >
-            <h3 className="content-text font-medium text-white flex justify-between items-center">
+            <h3 className="content-text text-white !font-[400] flex justify-between items-center">
               {item.question}
               <span className="ml-2 text-white">
                 {openIndex === index ? "−" : "+"}
@@ -57,7 +57,7 @@ const FAQ = () => {
                   : "max-h-0 opacity-0 overflow-hidden"
                 }`}
             >
-              <p className="content-text text-gray-400">{item.answer}</p>
+              <p className="content-text text-[#ffffff8f]">{item.answer}</p>
             </div>
           </div>
         ))}

@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Success from "../svg/Success";
 import Error from "../svg/Error";
 import Warning from "../svg/Warning";
+import ReactDOM from "react-dom";
 
 interface ModalProps {
   isOpen: boolean;
@@ -26,10 +29,22 @@ const ModalComponent: React.FC<ModalProps> = ({
   title,
   type,
 }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed h-dvh inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+  return ReactDOM.createPortal(
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
       <div
         className="modal-content w-full max-w-[80dvw] md:max-w-[700px] rounded-2xl bg-[#212121] p-6 shadow-lg transition-transform"
         onClick={(e) => e.stopPropagation()}
@@ -48,7 +63,8 @@ const ModalComponent: React.FC<ModalProps> = ({
         </div>
         <div>{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

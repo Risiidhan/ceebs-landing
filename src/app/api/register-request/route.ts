@@ -1,4 +1,4 @@
-// src/app/api/send-email/route.ts
+
 import { NextRequest, NextResponse } from 'next/server';
 // import sgMail from '@sendgrid/mail';
 import { adminDb } from '@/libs/firebaseAdmin';

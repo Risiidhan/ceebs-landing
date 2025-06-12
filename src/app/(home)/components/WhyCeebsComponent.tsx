@@ -1,7 +1,8 @@
 import React from "react";
-import TextReveal from "./ui/TextReveal";
-import TextParaAnimation from "./ui/TextParaAnimation";
-import ImageComponent from "./ui/ImageComponent";
+import TextReveal from "@/components/ui/TextReveal";
+import ImageComponent from "@/components/ui/ImageComponent";
+import TextParaAnimation from "@/components/ui/TextParaAnimation";
+
 
 const featuresArr: string[] = [
   "Get early access to exclusive features.",
