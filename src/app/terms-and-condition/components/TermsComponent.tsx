@@ -8,7 +8,7 @@ const TermsComponent = () => {
         <h1 className="text-3xl-responsive md:text-4xl font-bold text-center mb-4">
           CEEBS Terms and Conditions
         </h1>
-        <p className="text-gray-600 text-center mb-8 text-sm md:text-base">
+        <p className="text-white text-center mb-8 text-sm md:text-base">
           Last updated: June 10, 2025
         </p>
 
