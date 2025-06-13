@@ -20,7 +20,7 @@ const HeroComponent = () => {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -800]);
 
   return (
-    <div className="content-section px-[20px] flex-center flex-col gap-[20px] w-full h-full relative">
+    <div ref={containerRef} className="content-section px-[20px] flex-center flex-col gap-[20px] w-full h-full relative">
       <Logo />
       {/* <div className="animated-border min-h-[35px] flex-center">
         <span className="content-text lg:!text-[25px]">welcome to ceebs</span>
