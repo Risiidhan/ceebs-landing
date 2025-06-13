@@ -38,7 +38,7 @@ const FAQ = () => {
           Frequently Asked Questions
         </div>
       </TextReveal>
-      <div className="w-full flex flex-col gap-1 md:max-w-[80%] mx-auto">
+      <div className="w-full flex flex-col gap-4 md:max-w-[80%] mx-auto">
         {items.map((item, index) => (
           <div
             key={index}

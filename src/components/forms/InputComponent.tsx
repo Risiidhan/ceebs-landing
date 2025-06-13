@@ -18,11 +18,11 @@ const InputComponent: React.FC<InputComponentProps> = ({
   onChange,
 }) => {
   return (
-    <div className="w-full flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-black !focus-visible:ring-0">
+    <div className="w-full flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-black">
       <input
         type={type}
         name={name}
-        className={`block w-full flex-1 border-0 bg-transparent py-1.5 pl-2 content-text ${className}`}
+        className={`block w-full flex-1 border-0 custom-input bg-transparent py-1.5 pl-2 content-text ${className}`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

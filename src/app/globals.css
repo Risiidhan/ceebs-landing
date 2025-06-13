@@ -33,7 +33,9 @@ body {
 .flex-center {
   @apply flex justify-center items-center;
 }
-
+.custom-input {
+  @apply ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-white;
+}
 .content-text {
   font-size: 20px;
   font-weight: 300;
@@ -57,8 +59,8 @@ body {
   background: linear-gradient(
     to bottom,
     white,
-    rgba(255, 255, 255, 0.882),
-    transparent
+    rgb(158, 158, 158),
+    rgb(255, 255, 255)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -118,9 +120,24 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
-  box-shadow: 20px 20px 0 #000000;
 }
 
+.blur-soft-edges {
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgb(82, 82, 82) 20%,
+    rgb(40, 40, 40) 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
 .rotating-icons {
   animation: rotate 75s linear infinite;
   transform-origin: center;
@@ -199,6 +216,10 @@ body {
   position: fixed;
   width: 100%;
   overflow: hidden;
+}
+
+input:focus {
+  border-radius: 8px;
 }
 
 @media only screen and (max-width: 600px) {

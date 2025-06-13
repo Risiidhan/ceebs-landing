@@ -15,13 +15,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const ip =
-      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "0.0.0.0";
+   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || '0.0.0.0';
 
-    const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
+    // Get country using geojs.io
+    const geoRes = await fetch('https://get.geojs.io/v1/ip/geo.json');
+
     const geoData = await geoRes.json();
-
-    const country = geoData?.country_name || "Unknown";
+    const country = geoData?.country || 'Unknown';
 
     const existing = await adminDb
       .collection("requests")

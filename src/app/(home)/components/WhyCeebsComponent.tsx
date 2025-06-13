@@ -21,7 +21,7 @@ const WhyCeebsComponent = () => {
             <ImageComponent src={"/assets/img-capture-2.png"} />
           </div>
         </div>
-        <div className="context-text flex flex-col gap-3">
+        <div className="context-text flex flex-col gap-4">
           {featuresArr.map((feature: string, index: number) => (
             <div
               key={index}
