@@ -33,7 +33,7 @@ const HeroComponent = () => {
           </div>
         </TextReveal>
         <TextParaAnimation>
-          <div className="text-center content-text">
+          <div className="text-center content-text mb-1">
             A raw, anonymous social experience like no other. Built for the
             brave.
           </div>
@@ -50,7 +50,7 @@ const HeroComponent = () => {
 
       <div className="absolute bottom-0 w-screen z-10 flex justify-center items-center">
           <h1
-            style={{ fontSize: "clamp(50px, 25vw, 500px)" }}
+            style={{ fontSize: "clamp(50px, 25vw, 320px)" }}
             className="font-bold blur-soft-edges backdrop-blur-xl gradient-outlined-text leading-none text-center"
           >
             CEEBS
