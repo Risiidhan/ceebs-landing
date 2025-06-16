@@ -24,7 +24,7 @@ const HeroComponent = () => {
       ref={containerRef}
       className="content-section px-[20px] flex-center flex-col gap-[20px] w-full h-full relative"
     >
-      <div className="sticky flex-center flex-col top-1/2">
+      <div className="sticky flex-center flex-col">
         <Logo />
         <TextReveal>
           <div className="gradient-text text-[40px] lg:text-[60px] font-[700] leading-[50px] lg:leading-[70px]">
